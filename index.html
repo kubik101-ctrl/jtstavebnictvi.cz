@@ -134,7 +134,7 @@ nav a:hover { color: #c1121f; }
 .recommendation {
     background-color: #c1121f;
     color: #000;
-    padding: 0 30px;
+    padding: 20px 30px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     font-size: 18px;
@@ -186,10 +186,27 @@ nav a:hover { color: #c1121f; }
 .footer iframe { margin-top:15px; width:100%; max-width:600px; height:250px; border:none; }
 
 /* Responzivita */
-@media(max-width:900px){ .extra-services .service-block { flex:1 1 45%; } }
+@media(max-width:1024px){
+    .container { padding:30px; }
+    .item img { height:220px; }
+    .recommendation { padding:15px 20px; }
+}
+@media(max-width:900px){
+    .extra-services .service-block { flex:1 1 45%; }
+    .items .item { flex:1 1 45%; }
+}
 @media(max-width:600px){
+    .container { padding:20px; }
     .extra-services .service-block { flex:1 1 100%; }
+    .items .item { flex:1 1 100%; margin-bottom:20px; }
     .contact-section { flex-direction: column; }
+    .recommendation .author { bottom:5px; right:10px; font-size:14px; }
+}
+@media(max-width:400px){
+    nav a { margin: 0 10px; font-size:14px; }
+    .section-title { font-size:20px; }
+    .about-title { font-size:20px; }
+    .recommendation { font-size:16px; }
 }
 </style>
 </head>
@@ -213,7 +230,7 @@ nav a:hover { color: #c1121f; }
 
 <!-- O NÁS -->
 <h2 class="about-title">O NÁS:</h2>
-<div class="about-text">
+<div class="about-text" id="about">
 <p>J&T Stavebnictví působí na trhu již mnoho let a získala si reputaci díky kvalitě, spolehlivosti a osobnímu přístupu ke každému klientovi. Naše specializace zahrnuje kompletní realizace cihlových domů, rekonstrukce, zateplení a fasády, přičemž vždy dbáme na detail a estetický vzhled.</p>
 <p>Náš tým tvoří zkušené zedníky a stavební odborníky, kteří kombinují tradiční řemeslnou dovednost s moderními stavebními technologiemi. Každý projekt je pro nás unikátní a přistupujeme k němu s maximální pečlivostí, aby výsledná stavba splňovala nejvyšší standardy kvality a bezpečnosti.</p>
 <p>Naším cílem je spokojený zákazník – proto dbáme nejen na precizní provedení, ale i na rychlost a efektivitu prací. Spolu s vámi plánujeme a realizujeme každý projekt od prvotního návrhu až po finální dokončení, abyste se mohli těšit z nového či zrekonstruovaného domu, který vydrží generace.</p>
@@ -357,10 +374,4 @@ Reference – viz naše realizace
 
 <script>
 const recs = [
-  { text:"Chcela bych doporučit firmu J&T Stavebnictví na rekonstrukci bytů či domu. Musím ocenit profesionální přístup. Firma nám vyšla ve všem vstříc a na všem na čem jsme se domluvili tak to tak bylo. Rekonstrukce byla zhotovena včas podle smlouvy. Bylo potěšením s Vámi spolupracovat. Kvalita/spolehlivost.", author:"Bartáková P."},
-  { text:"J&T Stavebnictví je firma, která své slovo opravdu drží. Práce proběhla rychle, precizně a bez starostí. Přátelský a zkušený tým, který ví, co dělá. Když chcete spolehlivou zednickou firmu, už hledat nemusíte!", author:"Novák J."},
-  { text:"Velká spokojenost! Tým J&T Stavebnictví byl vždy ochotný, poradil nám a práce byla hotová přesně podle našich představ. Děkujeme a určitě se na vás obrátíme i příště.", author:"Gabrielová I."}
-];
-
-let currentRec = 0;
-
+  { text:"Chcela bych doporučit firmu J&T Stavebnictví na rekonstrukci bytů či domu. Musím ocenit profesionální přístup. Firma nám vyšla ve všem vstříc a na všem na čem jsme se domluvili tak to tak bylo. Rekonstrukce byla zhot
