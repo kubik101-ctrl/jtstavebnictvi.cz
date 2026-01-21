@@ -8,7 +8,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #222;
+    background-color: #000;
     color: #fff;
 }
 
@@ -44,7 +44,7 @@ nav a {
     font-weight: bold;
     transition: color 0.3s;
 }
-nav a:hover { color: #c1121f; }
+nav a:hover { color:#c1121f; }
 
 /* Hlavní obsah */
 .container {
@@ -56,19 +56,9 @@ nav a:hover { color: #c1121f; }
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Podtitulek */
-.subtitle { text-align:center; color:#ddd; margin-bottom:30px; font-size:20px; }
-
 /* O NÁS */
 .about-title { color:#c1121f; font-size:24px; margin-bottom:10px; }
 .about-text p { color:#ddd; line-height:1.6; margin-bottom:15px; }
-
-/* Kontakty */
-.contact p { margin:10px 0; font-size:20px; }
-.contact a { color:#c1121f; text-decoration:none; font-weight:bold; }
-
-/* Červený blok pod emailem (prázdný) */
-.email-block { display:block; margin:20px 0; padding:20px 0; background:#c1121f; border-radius:8px; }
 
 /* Fotky služeb */
 .section-title { color:#c1121f; font-size:24px; margin-bottom:20px; text-align:center; }
@@ -79,19 +69,19 @@ nav a:hover { color: #c1121f; }
 .item h3 { color:#c1121f; margin:10px 0 5px 0; }
 .item p { color:#ddd; margin:0 0 15px 0; }
 
-/* Červený blok Reference */
+/* Červený blok Reference – přes celou šířku */
 .red-block {
     width: 100%;
-    height: 200px;
     background-color: #c1121f;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 18px;
     color: #000;
     font-weight: bold;
-    margin: 40px 0;
-    border-radius: 8px;
+    margin: 0 0 40px;
+    border-radius: 0;
+    padding: 15px 0;
 }
 
 /* Extra služby - 6 bloků */
@@ -118,54 +108,46 @@ nav a:hover { color: #c1121f; }
 .extra-services ul li { position:relative; padding-left:20px; margin-bottom:5px; color:#ddd; }
 .extra-services ul li::before { content:"–"; position:absolute; left:0; color:#c1121f; font-weight:bold; }
 
-/* Kontaktní sekce s doporučením */
+/* Kontaktní sekce */
 .contact-section {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     margin-top: 40px;
 }
-
-/* Formulář a doporučení sloupce */
 .contact-form-column,
 .recommendation-column { flex:1; min-width:300px; }
 
-/* Rámeček doporučení s carousel */
+/* Rámeček doporučení s carousel – výška poloviční a zlaté hvězdičky */
 .recommendation {
     background-color: #c1121f;
     color: #000;
-    padding: 20px 30px;
+    padding: 15px 20px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    height: 50%;
     position: relative;
 }
-
-/* Hvězdičky nad jménem */
-.rating {
+.stars {
     color: gold;
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom:10px;
 }
-
-/* Carousel tlačítka */
 .carousel-buttons { display:flex; justify-content:center; margin-top:15px; gap:10px; }
 .carousel-buttons button { background:#a10f1a; color:#fff; border:none; padding:5px 12px; cursor:pointer; border-radius:5px; }
-
-/* Jméno vpravo dole */
-.recommendation .author { position:absolute; bottom:10px; right:20px; font-weight:bold; font-size:16px; }
+.recommendation .author { font-weight:bold; font-size:16px; margin-top:10px; }
 
 /* Formulář */
 .contact-form input, .contact-form textarea { width:100%; padding:10px; margin-bottom:15px; border-radius:5px; border:none; }
 .contact-form button { background:#c1121f; color:#000; font-weight:bold; padding:15px 20px; border:none; border-radius:8px; cursor:pointer; }
 .contact-form button:hover { background:#a10f1a; }
 
-/* Formulář popup potvrzení */
+/* Popup potvrzení */
 #form-popup {
     display:none;
     position: fixed;
@@ -182,8 +164,12 @@ nav a:hover { color: #c1121f; }
 }
 
 /* Footer */
-.footer { text-align:center; margin-top:30px; font-size:14px; color:#ccc; }
-.footer iframe { margin-top:15px; width:100%; max-width:600px; height:250px; border:none; }
+.footer-container { width:100%; background:#111; color:#ccc; text-align:center; padding:10px 0; font-size:14px; }
+.footer-container a { color:#ccc; text-decoration:underline; }
+
+/* Map iframe – užší */
+.footer-map { max-width: 1000px; margin: 0 auto; }
+.footer-map iframe { width:100%; height:200px; border:none; margin-bottom:10px; }
 
 /* Responzivita */
 @media(max-width:1024px){
@@ -200,21 +186,21 @@ nav a:hover { color: #c1121f; }
     .extra-services .service-block { flex:1 1 100%; }
     .items .item { flex:1 1 100%; margin-bottom:20px; }
     .contact-section { flex-direction: column; }
-    .recommendation .author { bottom:5px; right:10px; font-size:14px; }
+    .recommendation { height: auto; } 
 }
 @media(max-width:400px){
     nav a { margin: 0 10px; font-size:14px; }
     .section-title { font-size:20px; }
     .about-title { font-size:20px; }
-    .recommendation { font-size:16px; }
+    .recommendation { font-size:14px; }
 }
 </style>
 </head>
 <body>
 
-<!-- Horní černý pruh s logem -->
+<!-- Horní pruh s logem -->
 <div class="header-strip">
-    <img class="logo" src="https://i.imgur.com/uHsmMrf.png" alt="J&T Stavebnictví Logo">
+    <img class="logo" src="images/logo.png" alt="J&T Stavebnictví Logo">
 </div>
 
 <!-- Menu -->
@@ -241,31 +227,30 @@ nav a:hover { color: #c1121f; }
 <h2 class="section-title">Služby</h2>
 <div class="items">
     <div class="item">
-        <img src="foto1.jpg" alt="Co děláme">
+        <img src="images/foto1.jpg" alt="Co děláme">
         <h3>Co děláme</h3>
         <p>Zateplení, stavby domu, rekonstrukce, novostavby, fasády</p>
     </div>
     <div class="item">
-        <img src="foto2.jpg" alt="Na trhu">
+        <img src="images/foto2.jpg" alt="Na trhu">
         <h3>Na trhu</h3>
         <p>Již několik let poskytujeme kvalitní stavební služby s maximální spokojeností zákazníků</p>
     </div>
     <div class="item">
-        <img src="foto3.jpg" alt="Naše služby">
+        <img src="images/foto3.jpg" alt="Naše služby">
         <h3>Naše služby</h3>
         <p>Novostavby a rekonstrukce cihlových domů s profesionálním zateplením a fasádou</p>
     </div>
 </div>
 </div>
 
-<!-- Červený blok Reference -->
+<!-- Červený blok Reference – přes celou šířku -->
 <div id="references" class="red-block">
 Reference – viz naše realizace
 </div>
 
 <!-- Extra služby (6 bloků) -->
 <div id="extra-services" class="extra-services">
-
 <div class="service-block">
 <h3>STAVEBNÍ PRÁCE & VÝSTAVBY</h3>
 <p>Komplexní stavební služby od projektu až po dokončení. Novostavby, rekonstrukce, dokončovací práce.</p>
@@ -327,18 +312,15 @@ Reference – viz naše realizace
 <h3>DRENÁŽE & ODVODNĚNÍ</h3>
 <p>Drenáže a odvodnění jsou klíčovým faktorem pro udržení sucha a stability ve vaší stavbě. S pečlivým přístupem a důrazem na efektivitu provedu drenážní opatření, která zajistí odpovídající odvodnění a ochranu vaší konstrukce před vlhkostí.</p>
 </div>
-
 </div>
 
 <!-- Kontaktní sekce s doporučením -->
 <div id="contact" class="contact-section">
-
-  <!-- Levý sloupec: doporučení -->
   <div class="recommendation-column">
     <div class="recommendation" id="recommendation">
-      <p id="rec-text">Chcela bych doporučit firmu J&T Stavebnictví na rekonstrukci bytů či domu. Musím ocenit profesionální přístup. Firma nám vyšla ve všem vstříc a na všem na čem jsme se domluvili tak to tak bylo. Rekonstrukce byla zhotovena včas podle smlouvy. Bylo potěšením s Vámi spolupracovat. Kvalita/spolehlivost.</p>
-      <div class="rating" id="rec-rating">★★★★★</div>
-      <div class="author" id="rec-author">Bartáková P.</div>
+      <div class="stars">★★★★★</div>
+      <p id="rec-text"></p>
+      <div class="author" id="rec-author"></div>
       <div class="carousel-buttons">
         <button onclick="showRec(0)">1</button>
         <button onclick="showRec(1)">2</button>
@@ -346,8 +328,6 @@ Reference – viz naše realizace
       </div>
     </div>
   </div>
-
-  <!-- Pravý sloupec: formulář -->
   <div class="contact-form-column contact-form">
     <h2>Kontaktujte nás</h2>
     <form id="contactForm" action="https://formspree.io/f/xlggedqz" method="POST">
@@ -358,20 +338,35 @@ Reference – viz naše realizace
       <button type="submit">Odeslat zprávu</button>
     </form>
   </div>
-
 </div>
 
-<!-- Popup potvrzení -->
-<div id="form-popup">Děkujeme! Vaše zpráva byla odeslána.</div>
+<!-- Mapa -->
+<div class="footer-map">
+<iframe src="https://www.google.com/maps?q=Jana+Žižky+349,+Telč&output=embed"></iframe>
+</div>
 
 <!-- Footer -->
-<div class="footer">
-&copy; 2026 J&T Stavebnictví<br>
-<iframe src="https://www.google.com/maps?q=Jana+Žižky+349,+Telč&output=embed"></iframe>
+<div class="footer-container">
+©2026 Zednické práce J&T Stavebnictví | Všechna práva vyhrazena | Osoba zapsána v živnostenském rejstříku | IČ: 60542918 | <a href="gdpr.html">GDPR</a>
 </div>
 
 </div>
 
 <script>
+// Carousel s hvězdičkami a recenzemi
 const recs = [
-  { text:"Chcela bych doporučit firmu J&T Stavebnictví na rekonstrukci bytů či domu. Musím ocenit profesionální přístup. Firma nám vyšla ve všem vstříc a na všem na čem jsme se domluvili tak to tak bylo. Rekonstrukce byla zhot
+  { text:"Chcela bych doporučit firmu J&T Stavebnictví na rekonstrukci bytů či domu. Musím ocenit profesionální přístup. Firma nám vyšla ve všem vstříc a na všem na čem jsme se domluvili tak to tak bylo. Rekonstrukce byla zhotovena včas podle smlouvy. Bylo potěšením s Vámi spolupracovat. Kvalita/spolehlivost.", author:"Bartáková P." },
+  { text:"Velmi spokojený zákazník. Práce provedena profesionálně, všechny dohody byly dodrženy. Spolupráce s firmou byla bezproblémová a kvalitní.", author:"Novák J." },
+  { text:"Doporučuji firmu J&T Stavebnictví. Kvalita, rychlost a precizní provedení všech prací byly skvělé. Tým je profesionální a spolehlivý.", author:"Svoboda M." }
+];
+
+function showRec(index){
+  document.getElementById("rec-text").innerText = recs[index].text;
+  document.getElementById("rec-author").innerText = recs[index].author;
+}
+
+// Inicializace první recenze
+showRec(0);
+</script>
+</body>
+</html>
